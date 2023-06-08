@@ -49,8 +49,8 @@ static const struct led led_1 = {
 	.gpio_pin_name = DT_PROP_OR(LED1_NODE, label, ""),
 };
 static const struct led led_2 = {
-	.spec = GPIO_DT_SPEC_GET_OR(LED1_NODE, gpios, {0}),
-	.gpio_pin_name = DT_PROP_OR(LED1_NODE, label, ""),
+	.spec = GPIO_DT_SPEC_GET_OR(LED2_NODE, gpios, {0}),
+	.gpio_pin_name = DT_PROP_OR(LED2_NODE, label, ""),
 };
 
 /* The devicetree node identifier for the "sw0" alias. */
@@ -66,6 +66,14 @@ static const struct sw sw_0 = {
 	.spec = GPIO_DT_SPEC_GET_OR(BUTTON_NODE, gpios, {0}),
 	.gpio_pin_name = DT_PROP_OR(BUTTON_NODE, label, ""),
 };
+static struct gpio_callback button_cb_data;
+
+void button_pressed(const struct device *dev, struct gpio_callback *cb,
+		    uint32_t pins)
+{
+	gpio_pin_toggle(led_2.spec.port, led_2.spec.pin);
+	printk("Button pressed at %" PRIu32 "\n", k_cycle_get_32());
+}
 
 void main(void)
 {	
@@ -77,25 +85,43 @@ void main(void)
 		printk("Error: %s device is not ready\n", led_1.spec.port->name);
 		return;
 	}	
-
-	if (!device_is_ready(sw_0.spec.port)) {
-		printk("Error: %s device is not ready\n", sw_0.spec.port->name);
-		return;
-	}
-
 	ret = gpio_pin_configure_dt(&led_1.spec, GPIO_OUTPUT_ACTIVE);
 	if (ret < 0) {
 		printk("Error %d: failed to configure pin %d (LED '%s')\n",
 			ret, led_1.spec.pin, led_1.gpio_pin_name);		
 		return;
 	}
+	if (!device_is_ready(led_2.spec.port)) {
+		printk("Error: %s device is not ready\n", led_2.spec.port->name);
+		return;
+	}	
+	ret = gpio_pin_configure_dt(&led_2.spec, GPIO_OUTPUT_ACTIVE);
+	if (ret < 0) {
+		printk("Error %d: failed to configure pin %d (LED '%s')\n",
+			ret, led_2.spec.pin, led_2.gpio_pin_name);		
+		return;
+	}
 
+	if (!device_is_ready(sw_0.spec.port)) {
+		printk("Error: %s device is not ready\n", sw_0.spec.port->name);
+		return;
+	}
 	ret = gpio_pin_configure_dt(&sw_0.spec, GPIO_INPUT);
 	if (ret < 0) {
 		printk("Error %d: failed to configure pin %d (SW '%s')\n",
 			ret, sw_0.spec.pin, sw_0.gpio_pin_name);			
 		return;
 	}	
+	ret = gpio_pin_interrupt_configure_dt(&sw_0.spec,
+					      GPIO_INT_EDGE_TO_ACTIVE);
+	if (ret != 0) {
+		printk("Error %d: failed to configure interrupt on %s pin %d\n",
+			ret, sw_0.spec.port->name, sw_0.spec.pin);
+		return;
+	}	
+	gpio_init_callback(&button_cb_data, button_pressed, BIT(sw_0.spec.pin));
+	gpio_add_callback(sw_0.spec.port, &button_cb_data);
+	printk("Set up button at %s pin %d\n", sw_0.spec.port->name, sw_0.spec.pin);
 
 	while (1) {
 		if( gpio_pin_get(sw_0.spec.port, sw_0.spec.pin) )
@@ -128,7 +154,7 @@ void blink(void)
 	}
 }
 
-K_THREAD_DEFINE(blink_id, BLINK_STACKSIZE, blink, NULL, NULL, NULL,
-		BLINK_PRIORITY, 0, 2000);  //Start running task after 2000ms
 // K_THREAD_DEFINE(blink_id, BLINK_STACKSIZE, blink, NULL, NULL, NULL,
-// 		BLINK_PRIORITY, 0, 0);		
+// 		BLINK_PRIORITY, 0, 2000);  //Start running task after 2000ms
+K_THREAD_DEFINE(blink_id, BLINK_STACKSIZE, blink, NULL, NULL, NULL,
+		BLINK_PRIORITY, 0, 0);		
