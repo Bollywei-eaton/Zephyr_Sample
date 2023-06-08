@@ -1,7 +1,7 @@
 {
     "symbols": {
         "name": "Root",
-        "size": 6714,
+        "size": 8394,
         "identifier": "root",
         "children": [
             {
@@ -53,7 +53,7 @@
             },
             {
                 "name": "ZEPHYR_BASE",
-                "size": 2286,
+                "size": 2302,
                 "identifier": "C:/blr_deps/zsdk/zephyr",
                 "children": [
                     {
@@ -171,7 +171,7 @@
                     },
                     {
                         "name": "drivers",
-                        "size": 488,
+                        "size": 504,
                         "identifier": "drivers",
                         "children": [
                             {
@@ -367,22 +367,22 @@
                             },
                             {
                                 "name": "serial",
-                                "size": 24,
+                                "size": 40,
                                 "identifier": "drivers\\serial",
                                 "children": [
                                     {
                                         "name": "uart_stm32.c",
-                                        "size": 24,
+                                        "size": 40,
                                         "identifier": "drivers\\serial\\uart_stm32.c",
                                         "children": [
                                             {
                                                 "name": "uart_stm32_data_0",
-                                                "size": 8,
+                                                "size": 16,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_data_0"
                                             },
                                             {
                                                 "name": "uart_stm32_data_1",
-                                                "size": 8,
+                                                "size": 16,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_data_1"
                                             },
                                             {
@@ -544,37 +544,37 @@
                 "children": [
                     {
                         "name": "C:\\",
-                        "size": 1276,
+                        "size": 2940,
                         "identifier": "C:\\",
                         "children": [
                             {
                                 "name": "Project",
-                                "size": 1276,
+                                "size": 2940,
                                 "identifier": "C:\\Project",
                                 "children": [
                                     {
                                         "name": "Targa",
-                                        "size": 1276,
+                                        "size": 2940,
                                         "identifier": "C:\\Project\\Targa",
                                         "children": [
                                             {
                                                 "name": "SourceCode",
-                                                "size": 1276,
+                                                "size": 2940,
                                                 "identifier": "C:\\Project\\Targa\\SourceCode",
                                                 "children": [
                                                     {
                                                         "name": "Zephyr_Sample",
-                                                        "size": 1276,
+                                                        "size": 2940,
                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample",
                                                         "children": [
                                                             {
                                                                 "name": "blinky",
-                                                                "size": 1276,
+                                                                "size": 2940,
                                                                 "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky",
                                                                 "children": [
                                                                     {
                                                                         "name": "src",
-                                                                        "size": 1276,
+                                                                        "size": 2940,
                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src",
                                                                         "children": [
                                                                             {
@@ -586,6 +586,48 @@
                                                                                         "name": "button_cb_data",
                                                                                         "size": 12,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\main.c\\button_cb_data"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "Comm.c",
+                                                                                "size": 1664,
+                                                                                "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "_k_fifo_buf_uart_msgq",
+                                                                                        "size": 320,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\_k_fifo_buf_uart_msgq"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "rx_buf",
+                                                                                        "size": 32,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\rx_buf"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "rx_buf_pos",
+                                                                                        "size": 4,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\rx_buf_pos"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "_k_thread_obj_comm_id",
+                                                                                        "size": 128,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\_k_thread_obj_comm_id"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "_k_thread_data_comm_id",
+                                                                                        "size": 48,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\_k_thread_data_comm_id"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "uart_msgq",
+                                                                                        "size": 44,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\uart_msgq"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "_k_thread_stack_comm_id",
+                                                                                        "size": 1088,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\_k_thread_stack_comm_id"
                                                                                     }
                                                                                 ]
                                                                             },
@@ -629,10 +671,10 @@
             },
             {
                 "name": "(hidden)",
-                "size": 1276,
+                "size": 2940,
                 "identifier": "(hidden)"
             }
         ]
     },
-    "total_size": 6714
+    "total_size": 8394
 }

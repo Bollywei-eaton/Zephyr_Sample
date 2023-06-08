@@ -7,6 +7,7 @@ cmake_minimum_required(VERSION 3.13.1)
 target_sources(app PRIVATE
     "main.c"
     "UserTask.c"
+    "Comm.c"
 )
 
 target_include_directories(app PUBLIC "./")

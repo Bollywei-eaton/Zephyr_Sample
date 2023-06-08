@@ -1,7 +1,7 @@
 {
     "symbols": {
         "name": "Root",
-        "size": 24130,
+        "size": 26746,
         "identifier": "root",
         "children": [
             {
@@ -10,9 +10,9 @@
                 "identifier": ":",
                 "children": [
                     {
-                        "name": "CSWTCH.498",
+                        "name": "CSWTCH.516",
                         "size": 6,
-                        "identifier": ":\\CSWTCH.498"
+                        "identifier": ":\\CSWTCH.516"
                     },
                     {
                         "name": "levels.0",
@@ -128,7 +128,7 @@
             },
             {
                 "name": "ZEPHYR_BASE",
-                "size": 16527,
+                "size": 18495,
                 "identifier": "C:/blr_deps/zsdk/zephyr",
                 "children": [
                     {
@@ -742,7 +742,7 @@
                     },
                     {
                         "name": "drivers",
-                        "size": 4829,
+                        "size": 5553,
                         "identifier": "drivers",
                         "children": [
                             {
@@ -1210,12 +1210,12 @@
                             },
                             {
                                 "name": "serial",
-                                "size": 1130,
+                                "size": 1854,
                                 "identifier": "drivers\\serial",
                                 "children": [
                                     {
                                         "name": "uart_stm32.c",
-                                        "size": 1130,
+                                        "size": 1854,
                                         "identifier": "drivers\\serial\\uart_stm32.c",
                                         "children": [
                                             {
@@ -1234,13 +1234,98 @@
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_err_check"
                                             },
                                             {
+                                                "name": "uart_stm32_fifo_fill",
+                                                "size": 68,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_fifo_fill"
+                                            },
+                                            {
+                                                "name": "uart_stm32_fifo_read",
+                                                "size": 44,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_fifo_read"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_tx_enable",
+                                                "size": 30,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_tx_enable"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_tx_disable",
+                                                "size": 30,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_tx_disable"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_tx_ready",
+                                                "size": 20,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_tx_ready"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_tx_complete",
+                                                "size": 12,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_tx_complete"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_rx_enable",
+                                                "size": 30,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_rx_enable"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_rx_disable",
+                                                "size": 30,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_rx_disable"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_rx_ready",
+                                                "size": 12,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_rx_ready"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_err_enable",
+                                                "size": 128,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_err_enable"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_err_disable",
+                                                "size": 128,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_err_disable"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_is_pending",
+                                                "size": 36,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_is_pending"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_update",
+                                                "size": 4,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_update"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_callback_set",
+                                                "size": 8,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_callback_set"
+                                            },
+                                            {
+                                                "name": "uart_stm32_isr",
+                                                "size": 12,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_isr"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_config_func_0",
+                                                "size": 22,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_config_func_0"
+                                            },
+                                            {
+                                                "name": "uart_stm32_irq_config_func_1",
+                                                "size": 22,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_irq_config_func_1"
+                                            },
+                                            {
                                                 "name": "uart_stm32_set_baudrate",
                                                 "size": 94,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_set_baudrate"
                                             },
                                             {
                                                 "name": "uart_stm32_init",
-                                                "size": 228,
+                                                "size": 236,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_init"
                                             },
                                             {
@@ -1255,12 +1340,12 @@
                                             },
                                             {
                                                 "name": "uart_stm32_data_0",
-                                                "size": 8,
+                                                "size": 16,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_data_0"
                                             },
                                             {
                                                 "name": "uart_stm32_data_1",
-                                                "size": 8,
+                                                "size": 16,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_data_1"
                                             },
                                             {
@@ -1305,17 +1390,17 @@
                                             },
                                             {
                                                 "name": "uart_stm32_cfg_0",
-                                                "size": 28,
+                                                "size": 32,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_cfg_0"
                                             },
                                             {
                                                 "name": "uart_stm32_cfg_1",
-                                                "size": 28,
+                                                "size": 32,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_cfg_1"
                                             },
                                             {
                                                 "name": "uart_stm32_driver_api",
-                                                "size": 20,
+                                                "size": 76,
                                                 "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_driver_api"
                                             },
                                             {
@@ -1431,7 +1516,7 @@
                     },
                     {
                         "name": "kernel",
-                        "size": 6628,
+                        "size": 7872,
                         "identifier": "kernel",
                         "children": [
                             {
@@ -1530,7 +1615,7 @@
                             },
                             {
                                 "name": "sched.c",
-                                "size": 3716,
+                                "size": 4288,
                                 "identifier": "kernel\\sched.c",
                                 "children": [
                                     {
@@ -1557,6 +1642,16 @@
                                         "name": "unready_thread",
                                         "size": 56,
                                         "identifier": "kernel\\sched.c\\unready_thread"
+                                    },
+                                    {
+                                        "name": "add_to_waitq_locked",
+                                        "size": 128,
+                                        "identifier": "kernel\\sched.c\\add_to_waitq_locked"
+                                    },
+                                    {
+                                        "name": "pend",
+                                        "size": 188,
+                                        "identifier": "kernel\\sched.c\\pend"
                                     },
                                     {
                                         "name": "z_tick_sleep",
@@ -1609,6 +1704,11 @@
                                         "identifier": "kernel\\sched.c\\z_thread_abort"
                                     },
                                     {
+                                        "name": "z_pend_curr",
+                                        "size": 96,
+                                        "identifier": "kernel\\sched.c\\z_pend_curr"
+                                    },
+                                    {
                                         "name": "z_reschedule",
                                         "size": 136,
                                         "identifier": "kernel\\sched.c\\z_reschedule"
@@ -1637,6 +1737,11 @@
                                         "name": "z_reschedule_irqlock",
                                         "size": 24,
                                         "identifier": "kernel\\sched.c\\z_reschedule_irqlock"
+                                    },
+                                    {
+                                        "name": "z_unpend_first_thread",
+                                        "size": 160,
+                                        "identifier": "kernel\\sched.c\\z_unpend_first_thread"
                                     },
                                     {
                                         "name": "z_priq_dumb_remove",
@@ -1705,6 +1810,23 @@
                                         "name": "k_heap_init",
                                         "size": 16,
                                         "identifier": "kernel\\kheap.c\\k_heap_init"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "msg_q.c",
+                                "size": 672,
+                                "identifier": "kernel\\msg_q.c",
+                                "children": [
+                                    {
+                                        "name": "z_impl_k_msgq_get",
+                                        "size": 348,
+                                        "identifier": "kernel\\msg_q.c\\z_impl_k_msgq_get"
+                                    },
+                                    {
+                                        "name": "z_impl_k_msgq_put",
+                                        "size": 324,
+                                        "identifier": "kernel\\msg_q.c\\z_impl_k_msgq_put"
                                     }
                                 ]
                             },
@@ -1994,37 +2116,37 @@
                 "children": [
                     {
                         "name": "C:\\",
-                        "size": 752,
+                        "size": 1172,
                         "identifier": "C:\\",
                         "children": [
                             {
                                 "name": "Project",
-                                "size": 752,
+                                "size": 1172,
                                 "identifier": "C:\\Project",
                                 "children": [
                                     {
                                         "name": "Targa",
-                                        "size": 752,
+                                        "size": 1172,
                                         "identifier": "C:\\Project\\Targa",
                                         "children": [
                                             {
                                                 "name": "SourceCode",
-                                                "size": 752,
+                                                "size": 1172,
                                                 "identifier": "C:\\Project\\Targa\\SourceCode",
                                                 "children": [
                                                     {
                                                         "name": "Zephyr_Sample",
-                                                        "size": 752,
+                                                        "size": 1172,
                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample",
                                                         "children": [
                                                             {
                                                                 "name": "blinky",
-                                                                "size": 752,
+                                                                "size": 1172,
                                                                 "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky",
                                                                 "children": [
                                                                     {
                                                                         "name": "src",
-                                                                        "size": 752,
+                                                                        "size": 1172,
                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src",
                                                                         "children": [
                                                                             {
@@ -2073,6 +2195,38 @@
                                                                                         "name": "blink",
                                                                                         "size": 216,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\blink"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "Comm.c",
+                                                                                "size": 420,
+                                                                                "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "_k_thread_data_comm_id",
+                                                                                        "size": 48,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\_k_thread_data_comm_id"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "uart_msgq",
+                                                                                        "size": 44,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\uart_msgq"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "print_uart",
+                                                                                        "size": 40,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\print_uart"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "comm",
+                                                                                        "size": 156,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\comm"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "serial_cb",
+                                                                                        "size": 132,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\serial_cb"
                                                                                     }
                                                                                 ]
                                                                             }
@@ -2193,10 +2347,10 @@
             },
             {
                 "name": "(hidden)",
-                "size": 4821,
+                "size": 5469,
                 "identifier": "(hidden)"
             }
         ]
     },
-    "total_size": 24130
+    "total_size": 26746
 }
