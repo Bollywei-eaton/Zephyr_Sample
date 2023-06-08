@@ -1,0 +1,638 @@
+{
+    "symbols": {
+        "name": "Root",
+        "size": 6714,
+        "identifier": "root",
+        "children": [
+            {
+                "name": "(no paths)",
+                "size": 3152,
+                "identifier": ":",
+                "children": [
+                    {
+                        "name": "dynamic_regions.0",
+                        "size": 12,
+                        "identifier": ":\\dynamic_regions.0"
+                    },
+                    {
+                        "name": "SystemCoreClock",
+                        "size": 4,
+                        "identifier": ":\\SystemCoreClock"
+                    },
+                    {
+                        "name": "_kernel",
+                        "size": 36,
+                        "identifier": ":\\_kernel"
+                    },
+                    {
+                        "name": "z_main_thread",
+                        "size": 128,
+                        "identifier": ":\\z_main_thread"
+                    },
+                    {
+                        "name": "z_interrupt_stacks",
+                        "size": 2112,
+                        "identifier": ":\\z_interrupt_stacks"
+                    },
+                    {
+                        "name": "z_idle_threads",
+                        "size": 128,
+                        "identifier": ":\\z_idle_threads"
+                    },
+                    {
+                        "name": "_sw_isr_table",
+                        "size": 728,
+                        "identifier": ":\\_sw_isr_table"
+                    },
+                    {
+                        "name": "sched_spinlock",
+                        "size": 4,
+                        "identifier": ":\\sched_spinlock"
+                    }
+                ]
+            },
+            {
+                "name": "ZEPHYR_BASE",
+                "size": 2286,
+                "identifier": "C:/blr_deps/zsdk/zephyr",
+                "children": [
+                    {
+                        "name": "arch",
+                        "size": 1,
+                        "identifier": "arch",
+                        "children": [
+                            {
+                                "name": "arm",
+                                "size": 1,
+                                "identifier": "arch\\arm",
+                                "children": [
+                                    {
+                                        "name": "core",
+                                        "size": 1,
+                                        "identifier": "arch\\arm\\core",
+                                        "children": [
+                                            {
+                                                "name": "aarch32",
+                                                "size": 1,
+                                                "identifier": "arch\\arm\\core\\aarch32",
+                                                "children": [
+                                                    {
+                                                        "name": "mpu",
+                                                        "size": 1,
+                                                        "identifier": "arch\\arm\\core\\aarch32\\mpu",
+                                                        "children": [
+                                                            {
+                                                                "name": "arm_mpu.c",
+                                                                "size": 1,
+                                                                "identifier": "arch\\arm\\core\\aarch32\\mpu\\arm_mpu.c",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "static_regions_num",
+                                                                        "size": 1,
+                                                                        "identifier": "arch\\arm\\core\\aarch32\\mpu\\arm_mpu.c\\static_regions_num"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "lib",
+                        "size": 8,
+                        "identifier": "lib",
+                        "children": [
+                            {
+                                "name": "libc",
+                                "size": 4,
+                                "identifier": "lib\\libc",
+                                "children": [
+                                    {
+                                        "name": "minimal",
+                                        "size": 4,
+                                        "identifier": "lib\\libc\\minimal",
+                                        "children": [
+                                            {
+                                                "name": "source",
+                                                "size": 4,
+                                                "identifier": "lib\\libc\\minimal\\source",
+                                                "children": [
+                                                    {
+                                                        "name": "stdout",
+                                                        "size": 4,
+                                                        "identifier": "lib\\libc\\minimal\\source\\stdout",
+                                                        "children": [
+                                                            {
+                                                                "name": "stdout_console.c",
+                                                                "size": 4,
+                                                                "identifier": "lib\\libc\\minimal\\source\\stdout\\stdout_console.c",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "_stdout_hook",
+                                                                        "size": 4,
+                                                                        "identifier": "lib\\libc\\minimal\\source\\stdout\\stdout_console.c\\_stdout_hook"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "os",
+                                "size": 4,
+                                "identifier": "lib\\os",
+                                "children": [
+                                    {
+                                        "name": "printk.c",
+                                        "size": 4,
+                                        "identifier": "lib\\os\\printk.c",
+                                        "children": [
+                                            {
+                                                "name": "_char_out",
+                                                "size": 4,
+                                                "identifier": "lib\\os\\printk.c\\_char_out"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "drivers",
+                        "size": 488,
+                        "identifier": "drivers",
+                        "children": [
+                            {
+                                "name": "interrupt_controller",
+                                "size": 188,
+                                "identifier": "drivers\\interrupt_controller",
+                                "children": [
+                                    {
+                                        "name": "intc_exti_stm32.c",
+                                        "size": 188,
+                                        "identifier": "drivers\\interrupt_controller\\intc_exti_stm32.c",
+                                        "children": [
+                                            {
+                                                "name": "exti_data",
+                                                "size": 184,
+                                                "identifier": "drivers\\interrupt_controller\\intc_exti_stm32.c\\exti_data"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_54",
+                                                "size": 4,
+                                                "identifier": "drivers\\interrupt_controller\\intc_exti_stm32.c\\__devstate_dts_ord_54"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "clock_control",
+                                "size": 32,
+                                "identifier": "drivers\\clock_control",
+                                "children": [
+                                    {
+                                        "name": "clock_stm32_ll_common.c",
+                                        "size": 32,
+                                        "identifier": "drivers\\clock_control\\clock_stm32_ll_common.c",
+                                        "children": [
+                                            {
+                                                "name": "stm32_clock_control_api",
+                                                "size": 28,
+                                                "identifier": "drivers\\clock_control\\clock_stm32_ll_common.c\\stm32_clock_control_api"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_17",
+                                                "size": 4,
+                                                "identifier": "drivers\\clock_control\\clock_stm32_ll_common.c\\__devstate_dts_ord_17"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "console",
+                                "size": 4,
+                                "identifier": "drivers\\console",
+                                "children": [
+                                    {
+                                        "name": "uart_console.c",
+                                        "size": 4,
+                                        "identifier": "drivers\\console\\uart_console.c",
+                                        "children": [
+                                            {
+                                                "name": "uart_console_dev",
+                                                "size": 4,
+                                                "identifier": "drivers\\console\\uart_console.c\\uart_console_dev"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "gpio",
+                                "size": 220,
+                                "identifier": "drivers\\gpio",
+                                "children": [
+                                    {
+                                        "name": "gpio_stm32.c",
+                                        "size": 220,
+                                        "identifier": "drivers\\gpio\\gpio_stm32.c",
+                                        "children": [
+                                            {
+                                                "name": "gpio_stm32_data_a",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_a"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_b",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_b"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_c",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_c"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_d",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_d"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_e",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_e"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_f",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_f"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_g",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_g"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_h",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_h"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_i",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_i"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_j",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_j"
+                                            },
+                                            {
+                                                "name": "gpio_stm32_data_k",
+                                                "size": 16,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\gpio_stm32_data_k"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_107",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_107"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_106",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_106"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_105",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_105"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_104",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_104"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_103",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_103"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_102",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_102"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_101",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_101"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_73",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_73"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_18",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_18"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_21",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_21"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_100",
+                                                "size": 4,
+                                                "identifier": "drivers\\gpio\\gpio_stm32.c\\__devstate_dts_ord_100"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "serial",
+                                "size": 24,
+                                "identifier": "drivers\\serial",
+                                "children": [
+                                    {
+                                        "name": "uart_stm32.c",
+                                        "size": 24,
+                                        "identifier": "drivers\\serial\\uart_stm32.c",
+                                        "children": [
+                                            {
+                                                "name": "uart_stm32_data_0",
+                                                "size": 8,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_data_0"
+                                            },
+                                            {
+                                                "name": "uart_stm32_data_1",
+                                                "size": 8,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\uart_stm32_data_1"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_62",
+                                                "size": 4,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\__devstate_dts_ord_62"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_70",
+                                                "size": 4,
+                                                "identifier": "drivers\\serial\\uart_stm32.c\\__devstate_dts_ord_70"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "timer",
+                                "size": 20,
+                                "identifier": "drivers\\timer",
+                                "children": [
+                                    {
+                                        "name": "cortex_m_systick.c",
+                                        "size": 20,
+                                        "identifier": "drivers\\timer\\cortex_m_systick.c",
+                                        "children": [
+                                            {
+                                                "name": "announced_cycles",
+                                                "size": 4,
+                                                "identifier": "drivers\\timer\\cortex_m_systick.c\\announced_cycles"
+                                            },
+                                            {
+                                                "name": "cycle_count",
+                                                "size": 4,
+                                                "identifier": "drivers\\timer\\cortex_m_systick.c\\cycle_count"
+                                            },
+                                            {
+                                                "name": "last_load",
+                                                "size": 4,
+                                                "identifier": "drivers\\timer\\cortex_m_systick.c\\last_load"
+                                            },
+                                            {
+                                                "name": "lock",
+                                                "size": 4,
+                                                "identifier": "drivers\\timer\\cortex_m_systick.c\\lock"
+                                            },
+                                            {
+                                                "name": "overflow_cyc",
+                                                "size": 4,
+                                                "identifier": "drivers\\timer\\cortex_m_systick.c\\overflow_cyc"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "kernel",
+                        "size": 1789,
+                        "identifier": "kernel",
+                        "children": [
+                            {
+                                "name": "init.c",
+                                "size": 1473,
+                                "identifier": "kernel\\init.c",
+                                "children": [
+                                    {
+                                        "name": "z_idle_stacks",
+                                        "size": 384,
+                                        "identifier": "kernel\\init.c\\z_idle_stacks"
+                                    },
+                                    {
+                                        "name": "z_main_stack",
+                                        "size": 1088,
+                                        "identifier": "kernel\\init.c\\z_main_stack"
+                                    },
+                                    {
+                                        "name": "z_sys_post_kernel",
+                                        "size": 1,
+                                        "identifier": "kernel\\init.c\\z_sys_post_kernel"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "sched.c",
+                                "size": 12,
+                                "identifier": "kernel\\sched.c",
+                                "children": [
+                                    {
+                                        "name": "pending_current",
+                                        "size": 4,
+                                        "identifier": "kernel\\sched.c\\pending_current"
+                                    },
+                                    {
+                                        "name": "slice_max_prio",
+                                        "size": 4,
+                                        "identifier": "kernel\\sched.c\\slice_max_prio"
+                                    },
+                                    {
+                                        "name": "slice_ticks",
+                                        "size": 4,
+                                        "identifier": "kernel\\sched.c\\slice_ticks"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "timeout.c",
+                                "size": 24,
+                                "identifier": "kernel\\timeout.c",
+                                "children": [
+                                    {
+                                        "name": "announce_remaining",
+                                        "size": 4,
+                                        "identifier": "kernel\\timeout.c\\announce_remaining"
+                                    },
+                                    {
+                                        "name": "curr_tick",
+                                        "size": 8,
+                                        "identifier": "kernel\\timeout.c\\curr_tick"
+                                    },
+                                    {
+                                        "name": "timeout_lock",
+                                        "size": 4,
+                                        "identifier": "kernel\\timeout.c\\timeout_lock"
+                                    },
+                                    {
+                                        "name": "timeout_list",
+                                        "size": 8,
+                                        "identifier": "kernel\\timeout.c\\timeout_list"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mempool.c",
+                                "size": 280,
+                                "identifier": "kernel\\mempool.c",
+                                "children": [
+                                    {
+                                        "name": "kheap__system_heap",
+                                        "size": 256,
+                                        "identifier": "kernel\\mempool.c\\kheap__system_heap"
+                                    },
+                                    {
+                                        "name": "_system_heap",
+                                        "size": 24,
+                                        "identifier": "kernel\\mempool.c\\_system_heap"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "/",
+                "size": 0,
+                "identifier": "/",
+                "children": [
+                    {
+                        "name": "C:\\",
+                        "size": 1276,
+                        "identifier": "C:\\",
+                        "children": [
+                            {
+                                "name": "Project",
+                                "size": 1276,
+                                "identifier": "C:\\Project",
+                                "children": [
+                                    {
+                                        "name": "Targa",
+                                        "size": 1276,
+                                        "identifier": "C:\\Project\\Targa",
+                                        "children": [
+                                            {
+                                                "name": "SourceCode",
+                                                "size": 1276,
+                                                "identifier": "C:\\Project\\Targa\\SourceCode",
+                                                "children": [
+                                                    {
+                                                        "name": "Zephyr_Sample",
+                                                        "size": 1276,
+                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample",
+                                                        "children": [
+                                                            {
+                                                                "name": "blinky",
+                                                                "size": 1276,
+                                                                "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "src",
+                                                                        "size": 1276,
+                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "main.c",
+                                                                                "size": 12,
+                                                                                "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\main.c",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "button_cb_data",
+                                                                                        "size": 12,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\main.c\\button_cb_data"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "UserTask.c",
+                                                                                "size": 1264,
+                                                                                "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "_k_thread_stack_blink_id",
+                                                                                        "size": 1088,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_stack_blink_id"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "_k_thread_obj_blink_id",
+                                                                                        "size": 128,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_obj_blink_id"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "_k_thread_data_blink_id",
+                                                                                        "size": 48,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_data_blink_id"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "(hidden)",
+                "size": 1276,
+                "identifier": "(hidden)"
+            }
+        ]
+    },
+    "total_size": 6714
+}
