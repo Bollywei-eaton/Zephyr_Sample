@@ -129,4 +129,6 @@ void blink(void)
 }
 
 K_THREAD_DEFINE(blink_id, BLINK_STACKSIZE, blink, NULL, NULL, NULL,
-		BLINK_PRIORITY, 0, 0);
+		BLINK_PRIORITY, 0, 2000);  //Start running task after 2000ms
+// K_THREAD_DEFINE(blink_id, BLINK_STACKSIZE, blink, NULL, NULL, NULL,
+// 		BLINK_PRIORITY, 0, 0);		
