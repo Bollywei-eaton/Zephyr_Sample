@@ -6,21 +6,11 @@
 
 #include <zephyr/zephyr.h>
 #include <zephyr/drivers/gpio.h>
-
-/* size of stack area used by each thread */
-#define BLINK_STACKSIZE 1024
-
-/* scheduling priority used by each thread */
-#define BLINK_PRIORITY 7
+#include "UserTask.h"
 
 /* 100 msec = 0.1 sec */
 #define SLEEP_TIME_MS   100
 
-/* The devicetree node identifier for the "led0" alias. */
-#define LED0_NODE DT_ALIAS(led0)
-#if !DT_NODE_HAS_STATUS(LED0_NODE, okay)
-#error "Unsupported board: led0 devicetree alias is not defined"
-#endif
 /* The devicetree node identifier for the "led1" alias. */
 #define LED1_NODE DT_ALIAS(led1)
 #if !DT_NODE_HAS_STATUS(LED1_NODE, okay)
@@ -35,15 +25,6 @@
  * A build error on this line means your board is unsupported.
  * See the sample documentation for information on how to fix this.
  */
-struct led {
-	struct gpio_dt_spec spec;
-	const char *gpio_pin_name;
-};
-
-static const struct led led_0 = {
-	.spec = GPIO_DT_SPEC_GET_OR(LED0_NODE, gpios, {0}),
-	.gpio_pin_name = DT_PROP_OR(LED0_NODE, label, ""),
-};
 static const struct led led_1 = {
 	.spec = GPIO_DT_SPEC_GET_OR(LED1_NODE, gpios, {0}),
 	.gpio_pin_name = DT_PROP_OR(LED1_NODE, label, ""),
@@ -132,29 +113,4 @@ void main(void)
 	}
 }
 
-void blink(void)
-{
-	int ret;
-
-	printk("blink task is running\n");
-
-	if (!device_is_ready(led_0.spec.port)) {
-		printk("Error: %s device is not ready\n", led_0.spec.port->name);
-		return;
-	}	
-	ret = gpio_pin_configure_dt(&led_0.spec, GPIO_OUTPUT_ACTIVE);
-	if (ret < 0) {
-		printk("Error %d: failed to configure pin %d (LED '%s')\n",
-			ret, led_0.spec.pin, led_0.gpio_pin_name);		
-		return;
-	}	
-	while (1) {
-		gpio_pin_toggle(led_0.spec.port, led_0.spec.pin);
-		k_msleep(SLEEP_TIME_MS);
-	}
-}
-
-// K_THREAD_DEFINE(blink_id, BLINK_STACKSIZE, blink, NULL, NULL, NULL,
-// 		BLINK_PRIORITY, 0, 2000);  //Start running task after 2000ms
-K_THREAD_DEFINE(blink_id, BLINK_STACKSIZE, blink, NULL, NULL, NULL,
-		BLINK_PRIORITY, 0, 0);		
+	
