@@ -26,4 +26,6 @@ struct sw {
 	const char *gpio_pin_name;
 };
 
+void task_wdt_callback(int channel_id, void *user_data);
+
 #endif  // __USER_TASK_H__

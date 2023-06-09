@@ -1,12 +1,12 @@
 {
     "symbols": {
         "name": "Root",
-        "size": 8394,
+        "size": 9987,
         "identifier": "root",
         "children": [
             {
                 "name": "(no paths)",
-                "size": 3152,
+                "size": 3216,
                 "identifier": ":",
                 "children": [
                     {
@@ -26,7 +26,7 @@
                     },
                     {
                         "name": "z_main_thread",
-                        "size": 128,
+                        "size": 160,
                         "identifier": ":\\z_main_thread"
                     },
                     {
@@ -36,7 +36,7 @@
                     },
                     {
                         "name": "z_idle_threads",
-                        "size": 128,
+                        "size": 160,
                         "identifier": ":\\z_idle_threads"
                     },
                     {
@@ -53,9 +53,55 @@
             },
             {
                 "name": "ZEPHYR_BASE",
-                "size": 2302,
+                "size": 2503,
                 "identifier": "C:/blr_deps/zsdk/zephyr",
                 "children": [
+                    {
+                        "name": "subsys",
+                        "size": 185,
+                        "identifier": "subsys",
+                        "children": [
+                            {
+                                "name": "task_wdt",
+                                "size": 185,
+                                "identifier": "subsys\\task_wdt",
+                                "children": [
+                                    {
+                                        "name": "task_wdt.c",
+                                        "size": 185,
+                                        "identifier": "subsys\\task_wdt\\task_wdt.c",
+                                        "children": [
+                                            {
+                                                "name": "channels",
+                                                "size": 120,
+                                                "identifier": "subsys\\task_wdt\\task_wdt.c\\channels"
+                                            },
+                                            {
+                                                "name": "hw_wdt_channel",
+                                                "size": 4,
+                                                "identifier": "subsys\\task_wdt\\task_wdt.c\\hw_wdt_channel"
+                                            },
+                                            {
+                                                "name": "hw_wdt_dev",
+                                                "size": 4,
+                                                "identifier": "subsys\\task_wdt\\task_wdt.c\\hw_wdt_dev"
+                                            },
+                                            {
+                                                "name": "hw_wdt_started",
+                                                "size": 1,
+                                                "identifier": "subsys\\task_wdt\\task_wdt.c\\hw_wdt_started"
+                                            },
+                                            {
+                                                "name": "timer",
+                                                "size": 56,
+                                                "identifier": "subsys\\task_wdt\\task_wdt.c\\timer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
                     {
                         "name": "arch",
                         "size": 1,
@@ -171,7 +217,7 @@
                     },
                     {
                         "name": "drivers",
-                        "size": 504,
+                        "size": 512,
                         "identifier": "drivers",
                         "children": [
                             {
@@ -366,6 +412,30 @@
                                 ]
                             },
                             {
+                                "name": "watchdog",
+                                "size": 8,
+                                "identifier": "drivers\\watchdog",
+                                "children": [
+                                    {
+                                        "name": "wdt_iwdg_stm32.c",
+                                        "size": 8,
+                                        "identifier": "drivers\\watchdog\\wdt_iwdg_stm32.c",
+                                        "children": [
+                                            {
+                                                "name": "iwdg_stm32_dev_data",
+                                                "size": 4,
+                                                "identifier": "drivers\\watchdog\\wdt_iwdg_stm32.c\\iwdg_stm32_dev_data"
+                                            },
+                                            {
+                                                "name": "__devstate_dts_ord_89",
+                                                "size": 4,
+                                                "identifier": "drivers\\watchdog\\wdt_iwdg_stm32.c\\__devstate_dts_ord_89"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
                                 "name": "serial",
                                 "size": 40,
                                 "identifier": "drivers\\serial",
@@ -442,9 +512,33 @@
                     },
                     {
                         "name": "kernel",
-                        "size": 1789,
+                        "size": 1797,
                         "identifier": "kernel",
                         "children": [
+                            {
+                                "name": "sem.c",
+                                "size": 4,
+                                "identifier": "kernel\\sem.c",
+                                "children": [
+                                    {
+                                        "name": "lock",
+                                        "size": 4,
+                                        "identifier": "kernel\\sem.c\\lock"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "timer.c",
+                                "size": 4,
+                                "identifier": "kernel\\timer.c",
+                                "children": [
+                                    {
+                                        "name": "lock",
+                                        "size": 4,
+                                        "identifier": "kernel\\timer.c\\lock"
+                                    }
+                                ]
+                            },
                             {
                                 "name": "init.c",
                                 "size": 1473,
@@ -544,37 +638,37 @@
                 "children": [
                     {
                         "name": "C:\\",
-                        "size": 2940,
+                        "size": 4268,
                         "identifier": "C:\\",
                         "children": [
                             {
                                 "name": "Project",
-                                "size": 2940,
+                                "size": 4268,
                                 "identifier": "C:\\Project",
                                 "children": [
                                     {
                                         "name": "Targa",
-                                        "size": 2940,
+                                        "size": 4268,
                                         "identifier": "C:\\Project\\Targa",
                                         "children": [
                                             {
                                                 "name": "SourceCode",
-                                                "size": 2940,
+                                                "size": 4268,
                                                 "identifier": "C:\\Project\\Targa\\SourceCode",
                                                 "children": [
                                                     {
                                                         "name": "Zephyr_Sample",
-                                                        "size": 2940,
+                                                        "size": 4268,
                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample",
                                                         "children": [
                                                             {
                                                                 "name": "blinky",
-                                                                "size": 2940,
+                                                                "size": 4268,
                                                                 "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky",
                                                                 "children": [
                                                                     {
                                                                         "name": "src",
-                                                                        "size": 2940,
+                                                                        "size": 4268,
                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src",
                                                                         "children": [
                                                                             {
@@ -590,8 +684,45 @@
                                                                                 ]
                                                                             },
                                                                             {
+                                                                                "name": "UserTask.c",
+                                                                                "size": 2560,
+                                                                                "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "soft_timer_thread",
+                                                                                        "size": 160,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\soft_timer_thread"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "_k_thread_stack_blink_id",
+                                                                                        "size": 1088,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_stack_blink_id"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "soft_timer_event_stack",
+                                                                                        "size": 1088,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\soft_timer_event_stack"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "key_sem",
+                                                                                        "size": 16,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\key_sem"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "_k_thread_obj_blink_id",
+                                                                                        "size": 160,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_obj_blink_id"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "_k_thread_data_blink_id",
+                                                                                        "size": 48,
+                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_data_blink_id"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
                                                                                 "name": "Comm.c",
-                                                                                "size": 1664,
+                                                                                "size": 1696,
                                                                                 "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c",
                                                                                 "children": [
                                                                                     {
@@ -611,7 +742,7 @@
                                                                                     },
                                                                                     {
                                                                                         "name": "_k_thread_obj_comm_id",
-                                                                                        "size": 128,
+                                                                                        "size": 160,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\_k_thread_obj_comm_id"
                                                                                     },
                                                                                     {
@@ -628,28 +759,6 @@
                                                                                         "name": "_k_thread_stack_comm_id",
                                                                                         "size": 1088,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\_k_thread_stack_comm_id"
-                                                                                    }
-                                                                                ]
-                                                                            },
-                                                                            {
-                                                                                "name": "UserTask.c",
-                                                                                "size": 1264,
-                                                                                "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c",
-                                                                                "children": [
-                                                                                    {
-                                                                                        "name": "_k_thread_stack_blink_id",
-                                                                                        "size": 1088,
-                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_stack_blink_id"
-                                                                                    },
-                                                                                    {
-                                                                                        "name": "_k_thread_obj_blink_id",
-                                                                                        "size": 128,
-                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_obj_blink_id"
-                                                                                    },
-                                                                                    {
-                                                                                        "name": "_k_thread_data_blink_id",
-                                                                                        "size": 48,
-                                                                                        "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_data_blink_id"
                                                                                     }
                                                                                 ]
                                                                             }
@@ -671,10 +780,10 @@
             },
             {
                 "name": "(hidden)",
-                "size": 2940,
+                "size": 4268,
                 "identifier": "(hidden)"
             }
         ]
     },
-    "total_size": 8394
+    "total_size": 9987
 }

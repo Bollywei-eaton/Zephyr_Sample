@@ -8,7 +8,9 @@
  */
 
 #include "UserTask.h"
-
+#include <zephyr/drivers/watchdog.h>
+#include <zephyr/sys/reboot.h>
+#include <zephyr/task_wdt/task_wdt.h>
 
 /* size of stack area used by each thread */
 #define BLINK_STACKSIZE 1024
@@ -46,7 +48,7 @@ void soft_timer(void)
 		if (k_sem_take(&key_sem, K_FOREVER) == 0) {
 			printk("Get key_sem\n");
 		}		
-		k_msleep(500);
+		k_msleep(250);
 		ret = gpio_pin_interrupt_configure_dt(&sw_0.spec,
 							GPIO_INT_EDGE_TO_ACTIVE);						  
 		if (ret != 0) {
@@ -56,6 +58,25 @@ void soft_timer(void)
 		}			
 	}
 }
+
+
+void task_wdt_callback(int channel_id, void *user_data)
+{
+	printk("Task watchdog channel %d callback, thread: %s\n",
+		channel_id, k_thread_name_get((k_tid_t)user_data));
+
+	/*
+	 * If the issue could be resolved, call task_wdt_feed(channel_id) here
+	 * to continue operation.
+	 *
+	 * Otherwise we can perform some cleanup and reset the device.
+	 */
+
+	printk("Resetting device...\n");
+
+	sys_reboot(SYS_REBOOT_COLD);
+}
+
 K_THREAD_STACK_DEFINE(soft_timer_event_stack, SOFT_TIMER_STACKSIZE);
 void blink(void)
 {
@@ -78,9 +99,16 @@ void blink(void)
 			(k_thread_entry_t)soft_timer, NULL, NULL, NULL,
 			K_PRIO_COOP(SOFT_TIMER_PRIORITY),
 			0, K_NO_WAIT);	
-	k_thread_name_set(tid, "soft_timer");		
+	k_thread_name_set(tid, "soft_timer");
+	/*
+	 * Add a new task watchdog channel with custom callback function and
+	 * the current thread ID as user data.
+	 */
+	int task_wdt_id = task_wdt_add(1100U, task_wdt_callback,
+		(void *)k_current_get());			
 	while (1) {
 		gpio_pin_toggle(led_0.spec.port, led_0.spec.pin);
+		task_wdt_feed(task_wdt_id);
 		k_msleep(BLINK_TIME_MS);
 	}
 }

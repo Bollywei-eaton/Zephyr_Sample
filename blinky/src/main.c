@@ -6,10 +6,40 @@
 
 #include <zephyr/zephyr.h>
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/watchdog.h>
+#include <zephyr/sys/reboot.h>
+#include <zephyr/task_wdt/task_wdt.h>
 #include "UserTask.h"
 
+/*
+ * To use this sample, either the devicetree's /aliases must have a
+ * 'watchdog0' property, or one of the following watchdog compatibles
+ * must have an enabled node.
+ *
+ * If the devicetree has a watchdog node, we get the watchdog device
+ * from there. Otherwise, the task watchdog will be used without a
+ * hardware watchdog fallback.
+ */
+#if DT_NODE_HAS_STATUS(DT_ALIAS(watchdog0), okay)
+#define WDT_NODE DT_ALIAS(watchdog0)
+#elif DT_HAS_COMPAT_STATUS_OKAY(st_stm32_window_watchdog)
+#define WDT_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(st_stm32_window_watchdog)
+#elif DT_HAS_COMPAT_STATUS_OKAY(st_stm32_watchdog)
+#define WDT_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(st_stm32_watchdog)
+#elif DT_HAS_COMPAT_STATUS_OKAY(nordic_nrf_wdt)
+#define WDT_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(nordic_nrf_wdt)
+#elif DT_HAS_COMPAT_STATUS_OKAY(espressif_esp32_watchdog)
+#define WDT_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(espressif_esp32_watchdog)
+#elif DT_HAS_COMPAT_STATUS_OKAY(silabs_gecko_wdog)
+#define WDT_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(silabs_gecko_wdog)
+#elif DT_HAS_COMPAT_STATUS_OKAY(nxp_kinetis_wdog32)
+#define WDT_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(nxp_kinetis_wdog32)
+#elif DT_HAS_COMPAT_STATUS_OKAY(microchip_xec_watchdog)
+#define WDT_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(microchip_xec_watchdog)
+#endif
+
 /* 100 msec = 0.1 sec */
-#define SLEEP_TIME_MS   100
+#define SLEEP_TIME_MS   500
 
 /* The devicetree node identifier for the "led1" alias. */
 #define LED1_NODE DT_ALIAS(led1)
@@ -69,6 +99,23 @@ void main(void)
 	int ret;
 
 	printk("Hello World! %s\n", CONFIG_BOARD);
+#ifdef WDT_NODE
+	const struct device *hw_wdt_dev = DEVICE_DT_GET(WDT_NODE);
+#else
+	const struct device *hw_wdt_dev = NULL;
+#endif
+
+	if (!device_is_ready(hw_wdt_dev)) {
+		printk("Hardware watchdog %s is not ready; ignoring it.\n",
+		       hw_wdt_dev->name);
+		hw_wdt_dev = NULL;
+	}
+
+	ret = task_wdt_init(hw_wdt_dev);
+	if (ret != 0) {
+		printk("task wdt init failure: %d\n", ret);
+		return;
+	}
 
 	if (!device_is_ready(led_1.spec.port)) {
 		printk("Error: %s device is not ready\n", led_1.spec.port->name);
@@ -112,11 +159,14 @@ void main(void)
 	gpio_add_callback(sw_0.spec.port, &button_cb_data);
 	printk("Set up button at %s pin %d\n", sw_0.spec.port->name, sw_0.spec.pin);
 
+	int task_wdt_id = task_wdt_add(1100U, task_wdt_callback, (void *)k_current_get() );
+
 	while (1) {
-		if( gpio_pin_get(sw_0.spec.port, sw_0.spec.pin) )
+		while( gpio_pin_get(sw_0.spec.port, sw_0.spec.pin) )
 		{
-			gpio_pin_toggle(led_1.spec.port, led_1.spec.pin);
+			
 		}
+		task_wdt_feed(task_wdt_id);		
 		k_msleep(SLEEP_TIME_MS);
 	}
 }
