@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-
+#include <string.h>
 #include <zephyr/zephyr.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/watchdog.h>
@@ -78,6 +78,18 @@ static struct gpio_callback button_cb_data;
 
 extern struct k_sem key_sem;
 
+
+struct k_work_q my_work_q;
+struct device_info {
+    struct k_work work;
+    char name[16];
+} my_device;
+
+#define MY_STACK_SIZE 512
+#define MY_PRIORITY 5
+K_THREAD_STACK_DEFINE(my_stack_area, MY_STACK_SIZE);
+struct k_work_q my_work_q;
+
 void button_pressed(const struct device *dev, struct gpio_callback *cb,
 		    uint32_t pins)
 {
@@ -91,9 +103,17 @@ void button_pressed(const struct device *dev, struct gpio_callback *cb,
 			ret, sw_0.spec.port->name, sw_0.spec.pin);
 		return;
 	}		
+	k_work_submit(&my_device.work);
 	k_sem_give(&key_sem);
 }
 
+void print_work(struct k_work *item)
+{
+    struct device_info *the_device =
+        CONTAINER_OF(item, struct device_info, work);
+    printk("Got a work on device %s\n", the_device->name);
+}
+	
 void main(void)
 {	
 	int ret;
@@ -159,6 +179,15 @@ void main(void)
 	gpio_add_callback(sw_0.spec.port, &button_cb_data);
 	printk("Set up button at %s pin %d\n", sw_0.spec.port->name, sw_0.spec.pin);
 
+	k_work_queue_init(&my_work_q);
+	k_work_queue_start(&my_work_q, my_stack_area,
+					K_THREAD_STACK_SIZEOF(my_stack_area), MY_PRIORITY,
+					NULL);
+	/* initialize name info for a device */
+	strcpy(my_device.name, "FOO_dev");
+	/* initialize work item for printing device's error messages */
+	k_work_init(&my_device.work, print_work);
+
 	int task_wdt_id = task_wdt_add(1100U, task_wdt_callback, (void *)k_current_get() );
 
 	while (1) {
@@ -171,4 +200,3 @@ void main(void)
 	}
 }
 
-	
