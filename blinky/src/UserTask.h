@@ -21,5 +21,9 @@ struct led {
 	const char *gpio_pin_name;
 };
 
+struct sw {
+	struct gpio_dt_spec spec;
+	const char *gpio_pin_name;
+};
 
 #endif  // __USER_TASK_H__

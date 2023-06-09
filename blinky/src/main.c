@@ -39,21 +39,29 @@ static const struct led led_2 = {
 #if !DT_NODE_HAS_STATUS(BUTTON_NODE, okay)
 #error "Unsupported board: sw0 devicetree alias is not defined"
 #endif
-struct sw {
-	struct gpio_dt_spec spec;
-	const char *gpio_pin_name;
-};
-static const struct sw sw_0 = {
+
+const struct sw sw_0 = {
 	.spec = GPIO_DT_SPEC_GET_OR(BUTTON_NODE, gpios, {0}),
 	.gpio_pin_name = DT_PROP_OR(BUTTON_NODE, label, ""),
 };
 static struct gpio_callback button_cb_data;
 
+extern struct k_sem key_sem;
+
 void button_pressed(const struct device *dev, struct gpio_callback *cb,
 		    uint32_t pins)
 {
+	int ret;
 	gpio_pin_toggle(led_2.spec.port, led_2.spec.pin);
 	printk("Button pressed at %" PRIu32 "\n", k_cycle_get_32());
+	ret = gpio_pin_interrupt_configure_dt(&sw_0.spec,
+					      GPIO_INT_DISABLE);						  
+	if (ret != 0) {
+		printk("Error %d: failed to configure interrupt on %s pin %d\n",
+			ret, sw_0.spec.port->name, sw_0.spec.pin);
+		return;
+	}		
+	k_sem_give(&key_sem);
 }
 
 void main(void)
@@ -94,7 +102,7 @@ void main(void)
 		return;
 	}	
 	ret = gpio_pin_interrupt_configure_dt(&sw_0.spec,
-					      GPIO_INT_EDGE_TO_ACTIVE);
+					      GPIO_INT_EDGE_TO_ACTIVE);						  
 	if (ret != 0) {
 		printk("Error %d: failed to configure interrupt on %s pin %d\n",
 			ret, sw_0.spec.port->name, sw_0.spec.pin);
