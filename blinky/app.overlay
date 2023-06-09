@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2020 Phytec Messtechnik GmbH
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/ {
+	model = "STMicroelectronics STM32F429ZI-NUCLEO board";
+	compatible = "st,stm32f429zi-nucleo";
+
+	chosen {
+		zephyr,usr-uart = &usart6;
+	};
+};
+
+&usart6 {
+	pinctrl-0 = <&usart6_tx_pg14 &usart6_rx_pg9>;
+	pinctrl-names = "default";
+	current-speed = <19200>;
+	status = "okay";
+};
