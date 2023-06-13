@@ -55,7 +55,11 @@ void serial_cb(const struct device *dev, void *user_data)
 			rx_buf[rx_buf_pos] = '\0';
 
 			/* if queue is full, message is silently dropped */
-			k_msgq_put(&uart_msgq, &rx_buf, K_NO_WAIT);
+			if( k_msgq_put(&uart_msgq, &rx_buf, K_NO_WAIT) != 0 )
+			{
+				printk("uart message queue is full\n");
+				k_msgq_purge(&uart_msgq);
+			}
 
 			/* reset the buffer (it was copied to the msgq) */
 			rx_buf_pos = 0;
@@ -101,13 +105,18 @@ void comm(void)
 		if( memcmp(tx_buf, "stop", 4) == 0 )
 		{
 			k_thread_suspend( &_k_thread_obj_blink_id );
-			printk("Abort blink task\n");
+			printk("Suspend blink task\n");
 		}
 		else if( memcmp(tx_buf, "start", 5) == 0 )
 		{
 			k_thread_resume( &_k_thread_obj_blink_id );
 			printk("Resume blink task\n");
-		}		
+		}	
+		else if( memcmp(tx_buf, "blink", 5) == 0 )
+		{
+			k_wakeup( &_k_thread_obj_blink_id );
+			printk("Wakeup blink task\n");
+		}				
 		else
 		{
 			print_uart("Echo: ");
