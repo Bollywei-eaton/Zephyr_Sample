@@ -35,6 +35,34 @@ static const struct led led_0 = {
 
 struct k_sem key_sem;
 extern const struct sw sw_0;
+/**************************Static  commands example****************************/
+extern const struct led led_2;
+static void led_toggle( void )
+{
+	gpio_pin_toggle(led_2.spec.port, led_2.spec.pin);
+	printk("LED2 TOGGLE\n");
+}
+static void led_on( void )
+{
+	gpio_pin_set(led_2.spec.port, led_2.spec.pin, 1);
+	printk("LED2 ON\n");
+}
+static void led_off( void )
+{
+	gpio_pin_set(led_2.spec.port, led_2.spec.pin, 0);
+	printk("LED2 OFF\n");
+}
+SHELL_STATIC_SUBCMD_SET_CREATE(sub_demo,
+        SHELL_CMD(toggle, NULL, "led toggle",
+                                               led_toggle),
+        SHELL_CMD(on,   NULL, "led on", led_on),
+		SHELL_CMD(off,   NULL, "led off", led_off),
+        SHELL_SUBCMD_SET_END
+);
+/* Creating root (level 0) command "demo" */
+SHELL_CMD_REGISTER(led, &sub_demo, "Demo commands", NULL);
+/**************************Static  commands example****************************/
+/**************************Dictionary commands example****************************/
 static int led_flash_freq = 500;
 static int gain_cmd_handler(const struct shell *sh,
                             size_t argc, char **argv, void *data)
@@ -55,6 +83,7 @@ SHELL_SUBCMD_DICT_SET_CREATE(sub_freq, gain_cmd_handler,
         (freq_5, 5, "freq 5HZ"), (freq_10, 10, "freq 10HZ")
 );
 SHELL_CMD_REGISTER(freq, &sub_freq, "Set led freq", NULL);
+/**************************Dictionary commands example****************************/
 
 void soft_timer(void)
 {

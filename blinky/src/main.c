@@ -59,7 +59,7 @@ static const struct led led_1 = {
 	.spec = GPIO_DT_SPEC_GET_OR(LED1_NODE, gpios, {0}),
 	.gpio_pin_name = DT_PROP_OR(LED1_NODE, label, ""),
 };
-static const struct led led_2 = {
+const struct led led_2 = {
 	.spec = GPIO_DT_SPEC_GET_OR(LED2_NODE, gpios, {0}),
 	.gpio_pin_name = DT_PROP_OR(LED2_NODE, label, ""),
 };
