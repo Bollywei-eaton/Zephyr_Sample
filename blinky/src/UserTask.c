@@ -9,6 +9,7 @@
 
 #include "UserTask.h"
 #include <zephyr/drivers/watchdog.h>
+#include <zephyr/shell/shell.h>
 #include <zephyr/sys/reboot.h>
 #include <zephyr/task_wdt/task_wdt.h>
 
@@ -17,8 +18,6 @@
 
 /* scheduling priority used by each thread */
 #define BLINK_PRIORITY 7
-#define BLINK_TIME_MS   500
-
 
 #define SOFT_TIMER_STACKSIZE 512
 #define SOFT_TIMER_PRIORITY 7
@@ -36,6 +35,26 @@ static const struct led led_0 = {
 
 struct k_sem key_sem;
 extern const struct sw sw_0;
+static int led_flash_freq = 500;
+static int gain_cmd_handler(const struct shell *sh,
+                            size_t argc, char **argv, void *data)
+{
+        int freq;
+
+        /* data is a value corresponding to called command syntax */
+        freq = (int)data;
+        led_flash_freq = 1000 / freq;
+
+        shell_print(sh, "led freq set to: %s, freq is %dHZ\n", argv[0], freq );
+
+        return 0;
+}
+
+SHELL_SUBCMD_DICT_SET_CREATE(sub_freq, gain_cmd_handler,
+        (freq_1, 1, "freq 1HZ"), (freq_2, 2, "gain 2HZ"),
+        (freq_5, 5, "freq 5HZ"), (freq_10, 10, "freq 10HZ")
+);
+SHELL_CMD_REGISTER(freq, &sub_freq, "Set led freq", NULL);
 
 void soft_timer(void)
 {
@@ -110,7 +129,7 @@ void blink(void)
 	while (1) {
 		gpio_pin_toggle(led_0.spec.port, led_0.spec.pin);
 		task_wdt_feed(task_wdt_id);
-		k_msleep(BLINK_TIME_MS);
+		k_msleep( led_flash_freq );
 	}
 }
 
