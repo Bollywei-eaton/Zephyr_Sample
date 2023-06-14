@@ -6,7 +6,7 @@
  *
  *****************************************************************************************
  */
-
+#include <stdlib.h>
 #include "UserTask.h"
 #include <zephyr/drivers/watchdog.h>
 #include <zephyr/shell/shell.h>
@@ -60,7 +60,7 @@ SHELL_STATIC_SUBCMD_SET_CREATE(sub_demo,
         SHELL_SUBCMD_SET_END
 );
 /* Creating root (level 0) command "demo" */
-SHELL_CMD_REGISTER(led, &sub_demo, "Demo commands", NULL);
+SHELL_CMD_REGISTER(led, &sub_demo, "Control LED", NULL);
 /**************************Static  commands example****************************/
 /**************************Dictionary commands example****************************/
 static int led_flash_freq = 500;
@@ -82,8 +82,61 @@ SHELL_SUBCMD_DICT_SET_CREATE(sub_freq, gain_cmd_handler,
         (freq_1, 1, "freq 1HZ"), (freq_2, 2, "gain 2HZ"),
         (freq_5, 5, "freq 5HZ"), (freq_10, 10, "freq 10HZ")
 );
-SHELL_CMD_REGISTER(freq, &sub_freq, "Set led freq", NULL);
+SHELL_CMD_REGISTER(freq, &sub_freq, "Set led freq to 1/2/5/10 HZ", NULL);
 /**************************Dictionary commands example****************************/
+/**************************Param commands example****************************/
+static int chk_data(char *num)
+{
+    int i;
+    for (i = 0; num[i]; i++) // 遍历形参num（传入实参的大小）
+    {
+        if (num[i] > '9' || num[i] < '0') //只要有非数字，就返回错误
+        {
+            printk("Invalid input\n");
+            return 0;
+        }
+    }
+
+    if (i > 100) //都是数字，但长度超过100位，返回错误
+    {
+        printk("Exceed max length\n");
+        return 0;
+    }
+    return 1;
+}
+static int led2_freq(const struct shell *sh,
+                            size_t argc, char **argv)
+{
+        int freq;
+		int cnt;
+
+        printk( "\nargc = %d\n", argc);
+        for (cnt = 0; cnt < argc; cnt++) {
+                printk( "  argv[%d] = %s\n", cnt, argv[cnt]);
+        }
+        /* data is a value corresponding to called command syntax */
+		if( chk_data( argv[1]) )
+		{
+			freq = atoi(argv[1]);
+			led_flash_freq = 1000 / freq;
+			if( led_flash_freq < 10 )
+			{
+				led_flash_freq = 10;
+			}
+			printk( "led2 freq is %dHZ\n", freq );
+		}      
+        return 0;
+}
+
+/* Creating subcommands (level 1 command) array for command "demo". */
+SHELL_STATIC_SUBCMD_SET_CREATE(sub_demo1,
+        SHELL_CMD(freq, NULL, "Set led2 freq command.", led2_freq),
+        SHELL_SUBCMD_SET_END
+);
+/* Creating root (level 0) command "demo" without a handler */
+SHELL_CMD_REGISTER(led2, &sub_demo1, "Set led freq to any", NULL);
+
+/**************************Param commands example****************************/
 
 void soft_timer(void)
 {
