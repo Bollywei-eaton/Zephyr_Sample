@@ -13,14 +13,14 @@
 #include <zephyr/task_wdt/task_wdt.h>
 
 /* size of stack area used by each thread */
-#define BLINK_STACKSIZE 1024
+#define BLINK_STACKSIZE 512
 
 /* scheduling priority used by each thread */
 #define BLINK_PRIORITY 7
 #define BLINK_TIME_MS   500
 
 
-#define SOFT_TIMER_STACKSIZE 1024
+#define SOFT_TIMER_STACKSIZE 512
 #define SOFT_TIMER_PRIORITY 7
 static struct k_thread soft_timer_thread;
 
@@ -100,6 +100,7 @@ void blink(void)
 			K_PRIO_COOP(SOFT_TIMER_PRIORITY),
 			0, K_NO_WAIT);	
 	k_thread_name_set(tid, "soft_timer");
+	k_thread_start(&soft_timer_thread);
 	/*
 	 * Add a new task watchdog channel with custom callback function and
 	 * the current thread ID as user data.

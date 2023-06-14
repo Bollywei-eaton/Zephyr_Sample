@@ -119,6 +119,8 @@ void main(void)
 	int ret;
 
 	printk("Hello World! %s\n", CONFIG_BOARD);
+	printk("Lowest task priority is %d\n", K_LOWEST_THREAD_PRIO);
+	printk("Highest task priority is %d\n", K_HIGHEST_THREAD_PRIO);
 #ifdef WDT_NODE
 	const struct device *hw_wdt_dev = DEVICE_DT_GET(WDT_NODE);
 #else

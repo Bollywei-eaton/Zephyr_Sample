@@ -1,18 +1,33 @@
 {
     "symbols": {
         "name": "Root",
-        "size": 16323,
+        "size": 15434,
         "identifier": "root",
         "children": [
             {
                 "name": "(no paths)",
-                "size": 3596,
+                "size": 3630,
                 "identifier": ":",
                 "children": [
+                    {
+                        "name": "in_use.0",
+                        "size": 1,
+                        "identifier": ":\\in_use.0"
+                    },
+                    {
+                        "name": "tail.1",
+                        "size": 1,
+                        "identifier": ":\\tail.1"
+                    },
                     {
                         "name": "dynamic_regions.0",
                         "size": 12,
                         "identifier": ":\\dynamic_regions.0"
+                    },
+                    {
+                        "name": "wait_q.0",
+                        "size": 8,
+                        "identifier": ":\\wait_q.0"
                     },
                     {
                         "name": "SystemCoreClock",
@@ -26,12 +41,12 @@
                     },
                     {
                         "name": "z_main_thread",
-                        "size": 208,
+                        "size": 216,
                         "identifier": ":\\z_main_thread"
                     },
                     {
                         "name": "k_sys_work_q",
-                        "size": 240,
+                        "size": 248,
                         "identifier": ":\\k_sys_work_q"
                     },
                     {
@@ -41,7 +56,7 @@
                     },
                     {
                         "name": "z_idle_threads",
-                        "size": 208,
+                        "size": 216,
                         "identifier": ":\\z_idle_threads"
                     },
                     {
@@ -58,142 +73,168 @@
             },
             {
                 "name": "ZEPHYR_BASE",
-                "size": 8491,
+                "size": 7520,
                 "identifier": "C:/blr_deps/zsdk/zephyr",
                 "children": [
                     {
                         "name": "subsys",
-                        "size": 5065,
+                        "size": 4086,
                         "identifier": "subsys",
                         "children": [
                             {
-                                "name": "logging",
-                                "size": 3536,
-                                "identifier": "subsys\\logging",
+                                "name": "shell",
+                                "size": 3897,
+                                "identifier": "subsys\\shell",
                                 "children": [
                                     {
-                                        "name": "log_core.c",
-                                        "size": 3498,
-                                        "identifier": "subsys\\logging\\log_core.c",
+                                        "name": "modules",
+                                        "size": 19,
+                                        "identifier": "subsys\\shell\\modules",
                                         "children": [
                                             {
-                                                "name": "backend_attached",
-                                                "size": 1,
-                                                "identifier": "subsys\\logging\\log_core.c\\backend_attached"
-                                            },
-                                            {
-                                                "name": "buf32",
-                                                "size": 1024,
-                                                "identifier": "subsys\\logging\\log_core.c\\buf32"
-                                            },
-                                            {
-                                                "name": "buffered_cnt",
-                                                "size": 4,
-                                                "identifier": "subsys\\logging\\log_core.c\\buffered_cnt"
-                                            },
-                                            {
-                                                "name": "dropped_cnt",
-                                                "size": 4,
-                                                "identifier": "subsys\\logging\\log_core.c\\dropped_cnt"
-                                            },
-                                            {
-                                                "name": "initialized",
-                                                "size": 4,
-                                                "identifier": "subsys\\logging\\log_core.c\\initialized"
-                                            },
-                                            {
-                                                "name": "log_process_thread_timer",
-                                                "size": 56,
-                                                "identifier": "subsys\\logging\\log_core.c\\log_process_thread_timer"
-                                            },
-                                            {
-                                                "name": "panic_mode",
-                                                "size": 1,
-                                                "identifier": "subsys\\logging\\log_core.c\\panic_mode"
-                                            },
-                                            {
-                                                "name": "proc_tid",
-                                                "size": 4,
-                                                "identifier": "subsys\\logging\\log_core.c\\proc_tid"
-                                            },
-                                            {
-                                                "name": "timestamp_func",
-                                                "size": 4,
-                                                "identifier": "subsys\\logging\\log_core.c\\timestamp_func"
-                                            },
-                                            {
-                                                "name": "log_process_thread_sem",
-                                                "size": 16,
-                                                "identifier": "subsys\\logging\\log_core.c\\log_process_thread_sem"
-                                            },
-                                            {
-                                                "name": "logging_thread",
-                                                "size": 208,
-                                                "identifier": "subsys\\logging\\log_core.c\\logging_thread"
-                                            },
-                                            {
-                                                "name": "logging_stack",
-                                                "size": 2112,
-                                                "identifier": "subsys\\logging\\log_core.c\\logging_stack"
-                                            },
-                                            {
-                                                "name": "log_buffer",
-                                                "size": 60,
-                                                "identifier": "subsys\\logging\\log_core.c\\log_buffer"
+                                                "name": "devmem_service.c",
+                                                "size": 19,
+                                                "identifier": "subsys\\shell\\modules\\devmem_service.c",
+                                                "children": [
+                                                    {
+                                                        "name": "bytes",
+                                                        "size": 4,
+                                                        "identifier": "subsys\\shell\\modules\\devmem_service.c\\bytes"
+                                                    },
+                                                    {
+                                                        "name": "chunk",
+                                                        "size": 2,
+                                                        "identifier": "subsys\\shell\\modules\\devmem_service.c\\chunk"
+                                                    },
+                                                    {
+                                                        "name": "chunk_element",
+                                                        "size": 4,
+                                                        "identifier": "subsys\\shell\\modules\\devmem_service.c\\chunk_element"
+                                                    },
+                                                    {
+                                                        "name": "data",
+                                                        "size": 4,
+                                                        "identifier": "subsys\\shell\\modules\\devmem_service.c\\data"
+                                                    },
+                                                    {
+                                                        "name": "littleendian",
+                                                        "size": 1,
+                                                        "identifier": "subsys\\shell\\modules\\devmem_service.c\\littleendian"
+                                                    },
+                                                    {
+                                                        "name": "sum",
+                                                        "size": 4,
+                                                        "identifier": "subsys\\shell\\modules\\devmem_service.c\\sum"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     },
                                     {
-                                        "name": "log_output.c",
-                                        "size": 8,
-                                        "identifier": "subsys\\logging\\log_output.c",
+                                        "name": "backends",
+                                        "size": 3878,
+                                        "identifier": "subsys\\shell\\backends",
                                         "children": [
                                             {
-                                                "name": "freq",
-                                                "size": 4,
-                                                "identifier": "subsys\\logging\\log_output.c\\freq"
-                                            },
-                                            {
-                                                "name": "timestamp_div",
-                                                "size": 4,
-                                                "identifier": "subsys\\logging\\log_output.c\\timestamp_div"
+                                                "name": "shell_uart.c",
+                                                "size": 3878,
+                                                "identifier": "subsys\\shell\\backends\\shell_uart.c",
+                                                "children": [
+                                                    {
+                                                        "name": "shell_uart_ctx",
+                                                        "size": 784,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_ctx"
+                                                    },
+                                                    {
+                                                        "name": "shell_uart_history",
+                                                        "size": 16,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_history"
+                                                    },
+                                                    {
+                                                        "name": "shell_uart_stats",
+                                                        "size": 4,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_stats"
+                                                    },
+                                                    {
+                                                        "name": "shell_uart_thread",
+                                                        "size": 216,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_thread"
+                                                    },
+                                                    {
+                                                        "name": "shell_uart_stack",
+                                                        "size": 2112,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_stack"
+                                                    },
+                                                    {
+                                                        "name": "shell_transport_uart_ctrl_blk",
+                                                        "size": 20,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_transport_uart_ctrl_blk"
+                                                    },
+                                                    {
+                                                        "name": "shell_uart_out_buffer",
+                                                        "size": 30,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_out_buffer"
+                                                    },
+                                                    {
+                                                        "name": "_ring_buffer_data_shell_transport_uart_rx_ringbuf",
+                                                        "size": 64,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\_ring_buffer_data_shell_transport_uart_rx_ringbuf"
+                                                    },
+                                                    {
+                                                        "name": "_ring_buffer_data_shell_transport_uart_tx_ringbuf",
+                                                        "size": 8,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\_ring_buffer_data_shell_transport_uart_tx_ringbuf"
+                                                    },
+                                                    {
+                                                        "name": "shell_uart_fprintf_shell_fprintf_ctx",
+                                                        "size": 8,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_fprintf_shell_fprintf_ctx"
+                                                    },
+                                                    {
+                                                        "name": "shell_uart_history_ring_buf",
+                                                        "size": 32,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_history_ring_buf"
+                                                    },
+                                                    {
+                                                        "name": "shell_uart_history_ring_buf_data",
+                                                        "size": 512,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_uart_history_ring_buf_data"
+                                                    },
+                                                    {
+                                                        "name": "shell_transport_uart",
+                                                        "size": 8,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_transport_uart"
+                                                    },
+                                                    {
+                                                        "name": "shell_transport_uart_tx_ringbuf",
+                                                        "size": 32,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_transport_uart_tx_ringbuf"
+                                                    },
+                                                    {
+                                                        "name": "shell_transport_uart_rx_ringbuf",
+                                                        "size": 32,
+                                                        "identifier": "subsys\\shell\\backends\\shell_uart.c\\shell_transport_uart_rx_ringbuf"
+                                                    }
+                                                ]
                                             }
                                         ]
-                                    },
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "stats",
+                                "size": 4,
+                                "identifier": "subsys\\stats",
+                                "children": [
                                     {
-                                        "name": "log_backend_uart.c",
-                                        "size": 30,
-                                        "identifier": "subsys\\logging\\log_backend_uart.c",
+                                        "name": "stats.c",
+                                        "size": 4,
+                                        "identifier": "subsys\\stats\\stats.c",
                                         "children": [
                                             {
-                                                "name": "backend_cb_log_backend_uart",
-                                                "size": 8,
-                                                "identifier": "subsys\\logging\\log_backend_uart.c\\backend_cb_log_backend_uart"
-                                            },
-                                            {
-                                                "name": "in_panic",
-                                                "size": 1,
-                                                "identifier": "subsys\\logging\\log_backend_uart.c\\in_panic"
-                                            },
-                                            {
-                                                "name": "log_format_current",
+                                                "name": "stats_list",
                                                 "size": 4,
-                                                "identifier": "subsys\\logging\\log_backend_uart.c\\log_format_current"
-                                            },
-                                            {
-                                                "name": "log_output_uart_control_block",
-                                                "size": 12,
-                                                "identifier": "subsys\\logging\\log_backend_uart.c\\log_output_uart_control_block"
-                                            },
-                                            {
-                                                "name": "uart_dev",
-                                                "size": 4,
-                                                "identifier": "subsys\\logging\\log_backend_uart.c\\uart_dev"
-                                            },
-                                            {
-                                                "name": "uart_output_buf",
-                                                "size": 1,
-                                                "identifier": "subsys\\logging\\log_backend_uart.c\\uart_output_buf"
+                                                "identifier": "subsys\\stats\\stats.c\\stats_list"
                                             }
                                         ]
                                     }
@@ -233,35 +274,6 @@
                                                 "name": "timer",
                                                 "size": 56,
                                                 "identifier": "subsys\\task_wdt\\task_wdt.c\\timer"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "debug",
-                                "size": 1344,
-                                "identifier": "subsys\\debug",
-                                "children": [
-                                    {
-                                        "name": "thread_analyzer.c",
-                                        "size": 1344,
-                                        "identifier": "subsys\\debug\\thread_analyzer.c",
-                                        "children": [
-                                            {
-                                                "name": "_k_thread_obj_thread_analyzer",
-                                                "size": 208,
-                                                "identifier": "subsys\\debug\\thread_analyzer.c\\_k_thread_obj_thread_analyzer"
-                                            },
-                                            {
-                                                "name": "_k_thread_data_thread_analyzer",
-                                                "size": 48,
-                                                "identifier": "subsys\\debug\\thread_analyzer.c\\_k_thread_data_thread_analyzer"
-                                            },
-                                            {
-                                                "name": "_k_thread_stack_thread_analyzer",
-                                                "size": 1088,
-                                                "identifier": "subsys\\debug\\thread_analyzer.c\\_k_thread_stack_thread_analyzer"
                                             }
                                         ]
                                     }
@@ -679,9 +691,21 @@
                     },
                     {
                         "name": "kernel",
-                        "size": 2905,
+                        "size": 2913,
                         "identifier": "kernel",
                         "children": [
+                            {
+                                "name": "mutex.c",
+                                "size": 4,
+                                "identifier": "kernel\\mutex.c",
+                                "children": [
+                                    {
+                                        "name": "lock",
+                                        "size": 4,
+                                        "identifier": "kernel\\mutex.c\\lock"
+                                    }
+                                ]
+                            },
                             {
                                 "name": "sem.c",
                                 "size": 4,
@@ -720,6 +744,18 @@
                                         "name": "lock",
                                         "size": 4,
                                         "identifier": "kernel\\timer.c\\lock"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "poll.c",
+                                "size": 4,
+                                "identifier": "kernel\\poll.c",
+                                "children": [
+                                    {
+                                        "name": "lock",
+                                        "size": 4,
+                                        "identifier": "kernel\\poll.c\\lock"
                                     }
                                 ]
                             },
@@ -858,42 +894,42 @@
                 "children": [
                     {
                         "name": "C:\\",
-                        "size": 4236,
+                        "size": 4284,
                         "identifier": "C:\\",
                         "children": [
                             {
                                 "name": "Project",
-                                "size": 4236,
+                                "size": 4284,
                                 "identifier": "C:\\Project",
                                 "children": [
                                     {
                                         "name": "Targa",
-                                        "size": 4236,
+                                        "size": 4284,
                                         "identifier": "C:\\Project\\Targa",
                                         "children": [
                                             {
                                                 "name": "SourceCode",
-                                                "size": 4236,
+                                                "size": 4284,
                                                 "identifier": "C:\\Project\\Targa\\SourceCode",
                                                 "children": [
                                                     {
                                                         "name": "Zephyr_Sample",
-                                                        "size": 4236,
+                                                        "size": 4284,
                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample",
                                                         "children": [
                                                             {
                                                                 "name": "blinky",
-                                                                "size": 4236,
+                                                                "size": 4284,
                                                                 "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky",
                                                                 "children": [
                                                                     {
                                                                         "name": "src",
-                                                                        "size": 4236,
+                                                                        "size": 4284,
                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src",
                                                                         "children": [
                                                                             {
                                                                                 "name": "main.c",
-                                                                                "size": 860,
+                                                                                "size": 868,
                                                                                 "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\main.c",
                                                                                 "children": [
                                                                                     {
@@ -903,7 +939,7 @@
                                                                                     },
                                                                                     {
                                                                                         "name": "my_work_q",
-                                                                                        "size": 240,
+                                                                                        "size": 248,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\main.c\\my_work_q"
                                                                                     },
                                                                                     {
@@ -920,12 +956,12 @@
                                                                             },
                                                                             {
                                                                                 "name": "UserTask.c",
-                                                                                "size": 1632,
+                                                                                "size": 1656,
                                                                                 "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c",
                                                                                 "children": [
                                                                                     {
                                                                                         "name": "soft_timer_thread",
-                                                                                        "size": 208,
+                                                                                        "size": 216,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\soft_timer_thread"
                                                                                     },
                                                                                     {
@@ -940,12 +976,12 @@
                                                                                     },
                                                                                     {
                                                                                         "name": "key_sem",
-                                                                                        "size": 16,
+                                                                                        "size": 24,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\key_sem"
                                                                                     },
                                                                                     {
                                                                                         "name": "_k_thread_obj_blink_id",
-                                                                                        "size": 208,
+                                                                                        "size": 216,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\UserTask.c\\_k_thread_obj_blink_id"
                                                                                     },
                                                                                     {
@@ -957,7 +993,7 @@
                                                                             },
                                                                             {
                                                                                 "name": "Comm.c",
-                                                                                "size": 1744,
+                                                                                "size": 1760,
                                                                                 "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c",
                                                                                 "children": [
                                                                                     {
@@ -977,7 +1013,7 @@
                                                                                     },
                                                                                     {
                                                                                         "name": "_k_thread_obj_comm_id",
-                                                                                        "size": 208,
+                                                                                        "size": 216,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\_k_thread_obj_comm_id"
                                                                                     },
                                                                                     {
@@ -987,7 +1023,7 @@
                                                                                     },
                                                                                     {
                                                                                         "name": "uart_msgq",
-                                                                                        "size": 44,
+                                                                                        "size": 52,
                                                                                         "identifier": "C:\\Project\\Targa\\SourceCode\\Zephyr_Sample\\blinky\\src\\Comm.c\\uart_msgq"
                                                                                     },
                                                                                     {
@@ -1015,10 +1051,10 @@
             },
             {
                 "name": "(hidden)",
-                "size": 4236,
+                "size": 4284,
                 "identifier": "(hidden)"
             }
         ]
     },
-    "total_size": 16323
+    "total_size": 15434
 }
