@@ -1,0 +1,36 @@
+// C:/Project/Targa/zephyrproject/Zephyr_Sample/telnet/build/zephyr/zephyr_pre0.elf
+digraph "Device dependency graph" {
+	9 [label="rcc@58024400\nOrdinal: 9 | Handle: 1\n/soc/rcc@58024400"]
+	78 [label="interrupt-controller@58000000\nOrdinal: 78 | Handle: 2\n/soc/interrupt-controller@58000000"]
+	129 [label="gpio@58022800\nOrdinal: 129 | Handle: 3\n/soc/pin-controller@58020000/gpio@58022800"]
+	128 [label="gpio@58022400\nOrdinal: 128 | Handle: 4\n/soc/pin-controller@58020000/gpio@58022400"]
+	127 [label="gpio@58022000\nOrdinal: 127 | Handle: 5\n/soc/pin-controller@58020000/gpio@58022000"]
+	126 [label="gpio@58021C00\nOrdinal: 126 | Handle: 6\n/soc/pin-controller@58020000/gpio@58021C00"]
+	125 [label="gpio@58021800\nOrdinal: 125 | Handle: 7\n/soc/pin-controller@58020000/gpio@58021800"]
+	124 [label="gpio@58021400\nOrdinal: 124 | Handle: 8\n/soc/pin-controller@58020000/gpio@58021400"]
+	39 [label="gpio@58021000\nOrdinal: 39 | Handle: 9\n/soc/pin-controller@58020000/gpio@58021000"]
+	97 [label="gpio@58020C00\nOrdinal: 97 | Handle: 10\n/soc/pin-controller@58020000/gpio@58020C00"]
+	34 [label="gpio@58020800\nOrdinal: 34 | Handle: 11\n/soc/pin-controller@58020000/gpio@58020800"]
+	37 [label="gpio@58020400\nOrdinal: 37 | Handle: 12\n/soc/pin-controller@58020000/gpio@58020400"]
+	123 [label="gpio@58020000\nOrdinal: 123 | Handle: 13\n/soc/pin-controller@58020000/gpio@58020000"]
+	42 [label="reset-controller\nOrdinal: 42 | Handle: 14\n/soc/rcc@58024400/reset-controller"]
+	81 [label="rng@48021800\nOrdinal: 81 | Handle: 15\n/soc/rng@48021800"]
+	87 [label="serial@40004800\nOrdinal: 87 | Handle: 16\n/soc/serial@40004800"]
+	71 [label="ethernet@40028000\nOrdinal: 71 | Handle: 17\n/soc/ethernet@40028000"]
+	9 -> 97
+	9 -> 123
+	9 -> 126
+	9 -> 128
+	9 -> 125
+	9 -> 127
+	9 -> 81
+	9 -> 87
+	9 -> 124
+	9 -> 71
+	9 -> 129
+	9 -> 37
+	9 -> 39
+	9 -> 42
+	9 -> 34
+	42 -> 87
+}

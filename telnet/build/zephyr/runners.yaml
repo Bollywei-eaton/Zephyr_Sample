@@ -1,0 +1,40 @@
+# Available runners configured by board.cmake.
+runners:
+- openocd
+- jlink
+- stm32cubeprogrammer
+
+# Default flash runner if --runner is not given.
+flash-runner: openocd
+
+# Default debug runner if --runner is not given.
+debug-runner: openocd
+
+# Common runner configuration values.
+config:
+  board_dir: C:/Project/Targa/zephyrproject/zephyr/boards/arm/nucleo_h753zi
+  # Build outputs:
+  elf_file: zephyr.elf
+  hex_file: zephyr.hex
+  bin_file: zephyr.bin
+  # Host tools:
+  gdb: C:/arm-embedded/gcc-arm-none-eabi-10.3-2021.07/bin/arm-none-eabi-gdb.exe
+  openocd: C:/OpenOCD-20211118-0.11.0/bin/openocd.exe
+  openocd_search:
+    - C:/Project/Targa/zephyrproject/zephyr-sdk-0.16.1/sysroots/AMD64-pokysdk-linux/usr/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  openocd:
+    - --cmd-load
+    - flash write_image erase
+    - --cmd-verify
+    - verify_image
+    - --target-handle=_CHIPNAME.cpu0
+  jlink:
+    - --dt-flash=y
+    - --device=STM32H753ZI
+    - --speed=4000
+  stm32cubeprogrammer:
+    - --port=swd
+    - --reset-mode=hw

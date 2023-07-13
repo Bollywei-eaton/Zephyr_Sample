@@ -15,18 +15,18 @@ digraph "Device dependency graph" {
 	123 [label="gpio@58020000\nOrdinal: 123 | Handle: 13\n/soc/pin-controller@58020000/gpio@58020000"]
 	42 [label="reset-controller\nOrdinal: 42 | Handle: 14\n/soc/rcc@58024400/reset-controller"]
 	87 [label="serial@40004800\nOrdinal: 87 | Handle: 15\n/soc/serial@40004800"]
+	9 -> 125
 	9 -> 97
 	9 -> 124
 	9 -> 87
 	9 -> 39
 	9 -> 129
-	9 -> 125
-	9 -> 42
 	9 -> 127
+	9 -> 42
 	9 -> 37
+	9 -> 126
 	9 -> 128
 	9 -> 34
 	9 -> 123
-	9 -> 126
 	42 -> 87
 }

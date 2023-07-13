@@ -56,3 +56,5 @@ void task2(void)
 // K_THREAD_DEFINE(task2_id, TASK2_STACKSIZE, task2, NULL, NULL, NULL,
 // 		TASK2_PRIORITY, 0, 0);
 K_THREAD_DEFINE(task2_id, TASK2_STACKSIZE, task2, NULL, NULL, NULL,TASK2_PRIORITY, 0, 2000);//内核将2000ms后启动线程
+//struct k_thread _k_thread_obj_task2_id
+//const k_tid_t task2_id = (k_tid_t)&_k_thread_obj_task2_id
