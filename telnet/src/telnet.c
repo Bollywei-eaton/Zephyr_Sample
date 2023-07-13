@@ -134,6 +134,13 @@ static void setup_ipv6(struct net_if *iface)
 #define setup_ipv6(...)
 #endif /* CONFIG_NET_IPV6 */
 
+/* size of stack area used by each thread */
+#define TASK2_STACKSIZE 1024
+
+/* scheduling priority used by each thread */
+#define TASK2_PRIORITY 7
+
+
 int main(void)
 {
 	struct net_if *iface = net_if_get_default();
@@ -147,3 +154,18 @@ int main(void)
 	setup_ipv6(iface);
 	return 0;
 }
+
+
+
+void task2(void)
+{
+	LOG_INF("task2 is running\n");
+	
+	while (1) {
+		LOG_INF("Heart beat!\n");
+		k_msleep( 5000 );
+	}
+}
+
+K_THREAD_DEFINE(task2_id, TASK2_STACKSIZE, task2, NULL, NULL, NULL,
+		TASK2_PRIORITY, 0, 0);
