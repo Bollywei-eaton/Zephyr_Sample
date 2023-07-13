@@ -6,6 +6,12 @@
 
 #include <zephyr/kernel.h>
 
+/* size of stack area used by each thread */
+#define TASK2_STACKSIZE 1024
+
+/* scheduling priority used by each thread */
+#define TASK2_PRIORITY 7
+
 #define HELLO_WORLD_STACKSIZE 1024
 static struct k_thread hello_world_thread;
 #define SOFT_TIMER_PRIORITY 7
@@ -35,3 +41,17 @@ int main(void)
 	k_thread_name_set(tid, "soft_timer");		
 	return 0;
 }
+
+
+void task2(void)
+{
+	printk("task2 is running\n");
+	
+	while (1) {
+		printk("Heart beat!\n");
+		k_msleep( 5000 );
+	}
+}
+
+K_THREAD_DEFINE(task2_id, TASK2_STACKSIZE, task2, NULL, NULL, NULL,
+		TASK2_PRIORITY, 0, 0);
