@@ -16,6 +16,8 @@
 static struct k_thread hello_world_thread;
 #define SOFT_TIMER_PRIORITY 7
 
+static void counter_handler(struct k_work *work);
+
 void hello_world(void)
 {
 	int num = 0;
@@ -28,10 +30,7 @@ void hello_world(void)
 	}
 }
 
-static void counter_handler(struct k_work *work)
-{
-	printk("Delay work execute!\n");
-}
+
 
 static void mywork_handler(struct k_work *work)
 {
@@ -55,6 +54,11 @@ int main(void)
 	return 0;
 }
 
+static void counter_handler(struct k_work *work)
+{
+	printk("Delay work execute!\n");
+	k_work_reschedule(&dwork, K_MSEC(5000));
+}
 
 void task2(void)
 {
