@@ -33,6 +33,12 @@ static void counter_handler(struct k_work *work)
 	printk("Delay work execute!\n");
 }
 
+static void mywork_handler(struct k_work *work)
+{
+	printk("Mywork execute!\n");
+}
+
+K_WORK_DEFINE(Mywork,mywork_handler);
 K_WORK_DELAYABLE_DEFINE(dwork, counter_handler);
 K_THREAD_STACK_DEFINE(hello_world_event_stack, HELLO_WORLD_STACKSIZE);
 
@@ -56,6 +62,7 @@ void task2(void)
 	
 	while (1) {
 		printk("Heart beat!\n");
+		k_work_submit(&Mywork);
 		k_msleep( 5000 );
 	}
 }
