@@ -28,6 +28,12 @@ void hello_world(void)
 	}
 }
 
+static void counter_handler(struct k_work *work)
+{
+	printk("Delay work execute!\n");
+}
+
+K_WORK_DELAYABLE_DEFINE(dwork, counter_handler);
 K_THREAD_STACK_DEFINE(hello_world_event_stack, HELLO_WORLD_STACKSIZE);
 
 int main(void)
@@ -38,7 +44,8 @@ int main(void)
 			(k_thread_entry_t)hello_world, NULL, NULL, NULL,
 			K_PRIO_COOP(SOFT_TIMER_PRIORITY),
 			0, K_NO_WAIT);	
-	k_thread_name_set(tid, "soft_timer");		
+	k_thread_name_set(tid, "soft_timer");	
+	k_work_schedule(&dwork,	K_MSEC(5000));//run counter_handler one time after 5000ms 
 	return 0;
 }
 
